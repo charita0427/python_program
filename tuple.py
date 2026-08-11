@@ -1,19 +1,55 @@
-tuplex = ('tuple', False, 5.6, 4)
-print(tuplex)
 
-tuplex = (3,4,6,7,2,4,6)
-print(tuplex)
+habit_info = ("Reading", True, 7, 20.5)
+print(habit_info)
+ 
 
-tuplex = tuplex + (9,)
-print(tuplex)
+weekly_habits = (1, 0, 1, 1, 0, 1, 1)
+print(weekly_habits)
+ 
 
-tuple1 = (50, 60, 80, 90, 80)
-print (tuple1.count(80)) #first need to write down the name and then count
+print("Total days tracked:", len(weekly_habits))
+ 
 
-tuplex = (1,5,6,7,4,8,9,3,2,9)
-_slice = tuplex [4:5] #it starts at 4 and stops at 5
+print("Day 1 status:", weekly_habits[0])
+print("Day 4 status:", weekly_habits[3])
+ 
 
-print (_slice)
+first_three_days = weekly_habits[0:3]
+print("First three days:", first_three_days)
+ 
+weekend_days = weekly_habits[5:7]
+print("Weekend days:", weekend_days)
+ 
 
-_slice = tuplex [:6] #it only picks 6 nubers from the string 
-print (_slice)
+weekly_habits = weekly_habits + (1,)
+print("After adding one more day:", weekly_habits)
+ 
+
+completed = weekly_habits.count(1)
+missed = weekly_habits.count(0)
+ 
+print("Completed days:", completed)
+print("Missed days:", missed)
+ 
+
+done = 0
+not_done = 0
+ 
+for i in range(0, len(weekly_habits)):
+    if weekly_habits[i] == 1:
+        done += 1
+    else:
+        not_done += 1
+ 
+if done > not_done:
+    print("Great habit progress!")
+else:
+    print("Try to be more consistent!")
+ 
+
+print("===== WEEKLY HABIT TRACKER =====")
+print("Habit Name:", habit_info[0])
+print("Weekly Record:", weekly_habits)
+print("Completed:", done)
+print("Missed:", not_done)
+
